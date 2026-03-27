@@ -173,6 +173,13 @@
     .ba-labels { display: flex; justify-content: space-between; margin-top: 1rem; }
     .ba-label { color: rgba(255,255,255,0.5); font-size: 0.82rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
     .ba-label.after { color: var(--gold); }
+    .ba-tag {
+      position: absolute; top: 1rem; padding: 0.4rem 1rem;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      border-radius: 50px; z-index: 5; pointer-events: none;
+    }
+    .ba-tag.before { left: 1rem; background: rgba(0,0,0,0.6); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.2); }
+    .ba-tag.after { right: 1rem; background: var(--gold); color: #000; }
 
     /* GALLERY */
     .gallery { background: var(--dark); }
@@ -372,11 +379,13 @@
     </div>
     <div class="ba-wrapper" data-aos="fade-up" data-aos-delay="100">
       <div class="ba-slider" id="baSlider">
-        <img class="ba-after" src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=900&q=85" alt="After renovation" />
+        <img class="ba-after" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=85" alt="After renovation" />
         <div class="ba-before-wrap" id="baBeforeWrap">
-          <img class="ba-before" id="baBefore" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=85" alt="Before renovation" />
+          <img class="ba-before" id="baBefore" src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=900&q=85" alt="Before renovation" />
         </div>
         <div class="ba-handle" id="baHandle"></div>
+        <div class="ba-tag before">Before</div>
+        <div class="ba-tag after">After</div>
       </div>
       <div class="ba-labels">
         <span class="ba-label">◀ Before</span>

@@ -142,44 +142,17 @@
     .service-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.6rem; }
     .service-card p { color: #666; font-size: 0.95rem; line-height: 1.7; }
 
-    /* BEFORE/AFTER SLIDER */
-    .before-after-section { background: var(--dark2); padding: 6rem 2rem; }
-    .before-after-section .section-title { color: white; }
-    .before-after-section .section-label { color: var(--gold); }
-    .before-after-section .section-sub { color: rgba(255,255,255,0.6); }
-    .ba-wrapper { max-width: 900px; margin: 3rem auto 0; }
-    .ba-slider {
-      position: relative; width: 100%; border-radius: 16px; overflow: hidden;
-      cursor: col-resize; user-select: none; box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-    }
-    .ba-after { width: 100%; display: block; height: 520px; object-fit: cover; }
-    .ba-before-wrap {
-      position: absolute; top: 0; left: 0; height: 100%; width: 50%; overflow: hidden;
-      pointer-events: none; transition: width 0.05s;
-    }
-    .ba-before { display: block; height: 520px; width: 900px; max-width: none; object-fit: cover; object-position: left; }
-    .ba-handle {
-      position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%);
-      width: 4px; background: white; cursor: col-resize; z-index: 10;
-    }
-    .ba-handle::before, .ba-handle::after {
-      content: ''; position: absolute; left: 50%; transform: translateX(-50%);
-      width: 44px; height: 44px; background: white; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
-    .ba-handle::before { top: 50%; transform: translate(-50%, -50%); }
-    .ba-handle::after { content: '◀ ▶'; top: 50%; transform: translate(-50%, -50%); font-size: 10px; color: #333; display: flex; align-items: center; justify-content: center; }
-    .ba-labels { display: flex; justify-content: space-between; margin-top: 1rem; }
-    .ba-label { color: rgba(255,255,255,0.5); font-size: 0.82rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
-    .ba-label.after { color: var(--gold); }
-    .ba-tag {
-      position: absolute; top: 1rem; padding: 0.4rem 1rem;
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-      border-radius: 50px; z-index: 5; pointer-events: none;
-    }
-    .ba-tag.before { left: 1rem; background: rgba(0,0,0,0.6); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.2); }
-    .ba-tag.after { right: 1rem; background: var(--gold); color: #000; }
+    /* PROCESS STEPS */
+    .process { background: var(--dark2); padding: 6rem 2rem; }
+    .process .section-title { color: white; }
+    .process .section-label { color: var(--gold); }
+    .process .section-sub { color: rgba(255,255,255,0.6); }
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; margin-top: 3.5rem; position: relative; }
+    .process-grid::before { content: ''; position: absolute; top: 36px; left: 10%; right: 10%; height: 2px; background: linear-gradient(to right, transparent, var(--gold), transparent); opacity: 0.3; }
+    .process-step { text-align: center; padding: 2rem 1.5rem; position: relative; }
+    .step-num { width: 72px; height: 72px; border-radius: 50%; background: var(--dark); border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: 800; color: var(--gold); position: relative; z-index: 1; }
+    .process-step h3 { color: white; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .process-step p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.7; }
 
     /* GALLERY */
     .gallery { background: var(--dark); }
@@ -369,27 +342,34 @@
   </div>
 </section>
 
-<!-- BEFORE / AFTER -->
-<section class="before-after-section" id="transformation">
+<!-- PROCESS -->
+<section class="process" id="process">
   <div class="container">
     <div data-aos="fade-up" class="text-center">
-      <p class="section-label">The Difference</p>
-      <h2 class="section-title">See the <span>Transformation</span></h2>
-      <p class="section-sub">Drag the slider to see the before and after — this is what we do to every space we touch.</p>
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">From Vision to <span>Reality</span></h2>
+      <p class="section-sub">A simple, stress-free process designed around you.</p>
     </div>
-    <div class="ba-wrapper" data-aos="fade-up" data-aos-delay="100">
-      <div class="ba-slider" id="baSlider">
-        <img class="ba-after" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=85" alt="After renovation" />
-        <div class="ba-before-wrap" id="baBeforeWrap">
-          <img class="ba-before" id="baBefore" src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=900&q=85" alt="Before renovation" />
-        </div>
-        <div class="ba-handle" id="baHandle"></div>
-        <div class="ba-tag before">Before</div>
-        <div class="ba-tag after">After</div>
+    <div class="process-grid">
+      <div class="process-step" data-aos="fade-up" data-aos-delay="0">
+        <div class="step-num">1</div>
+        <h3>Free Consultation</h3>
+        <p>Call or message us and we'll come to your home, listen to your vision, and assess the space — no pressure, no cost.</p>
       </div>
-      <div class="ba-labels">
-        <span class="ba-label">◀ Before</span>
-        <span class="ba-label after">After ▶</span>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+        <div class="step-num">2</div>
+        <h3>Custom Quote</h3>
+        <p>We provide a detailed, transparent estimate — no hidden fees, no surprises. You know exactly what you're getting.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+        <div class="step-num">3</div>
+        <h3>We Build</h3>
+        <p>Our skilled team gets to work with minimal disruption to your daily life. We treat your home with total respect.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+        <div class="step-num">4</div>
+        <h3>You Love It</h3>
+        <p>Final walkthrough, your approval, and we're not done until you're 100% happy. That's the YD Decor promise.</p>
       </div>
     </div>
   </div>
@@ -586,26 +566,7 @@
   function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
   document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
 
-  // Before/After Slider
-  const slider = document.getElementById('baSlider');
-  const beforeWrap = document.getElementById('baBeforeWrap');
-  const handle = document.getElementById('baHandle');
-  let dragging = false;
 
-  function setPos(x) {
-    const rect = slider.getBoundingClientRect();
-    let pct = Math.min(Math.max((x - rect.left) / rect.width, 0.02), 0.98);
-    beforeWrap.style.width = (pct * 100) + '%';
-    handle.style.left = (pct * 100) + '%';
-  }
-
-  handle.addEventListener('mousedown', () => dragging = true);
-  slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });
-  window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
-  window.addEventListener('mouseup', () => dragging = false);
-  handle.addEventListener('touchstart', e => { dragging = true; e.preventDefault(); }, { passive: false });
-  slider.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); e.preventDefault(); }, { passive: false });
-  window.addEventListener('touchend', () => dragging = false);
 </script>
 </body>
 </html>
